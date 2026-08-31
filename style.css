@@ -1,0 +1,158 @@
+/* Handyman James — site styles
+   Palette: canvas (warm off-white), denim (workwear blue), rust (aged copper), brass (accent) */
+
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #26211B;
+  --ink-soft: #4A4238;
+  --canvas: #F3EEE3;
+  --canvas-alt: #EAE1CE;
+  --denim: #2B4257;
+  --denim-dark: #1D2E3D;
+  --rust: #B85C38;
+  --brass: #9C7A3C;
+  --white: #FFFDF8;
+  --line: rgba(38, 33, 27, 0.14);
+  --max-width: 1080px;
+  --radius: 3px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: 'Karla', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Zilla Slab', serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--ink);
+}
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: 1.25rem; margin-bottom: 0.3em; }
+
+p { margin: 0 0 1em; max-width: 62ch; }
+a { color: var(--denim); }
+a:hover { color: var(--rust); }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+.site-header { background: var(--denim-dark); color: var(--white); padding: 16px 0; }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header a { color: var(--white); text-decoration: none; }
+.brand { font-family: 'Zilla Slab', serif; font-weight: 700; font-size: 1.4rem; }
+.header-right { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.license-badge {
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  color: var(--white);
+  background: rgba(156, 122, 61, 0.25);
+}
+.license-badge strong { color: #E9D9B8; }
+.header-phone { font-family: 'Zilla Slab', serif; font-weight: 600; font-size: 1.05rem; white-space: nowrap; }
+nav.site-nav a { margin-right: 18px; font-size: 0.95rem; }
+nav.site-nav a:last-child { margin-right: 0; }
+
+/* Hero */
+.hero { padding: 72px 0 56px; border-bottom: 1px solid var(--line); }
+.hero blockquote {
+  font-family: 'Zilla Slab', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--denim);
+  border-left: 3px solid var(--rust);
+  padding-left: 16px;
+  margin: 0 0 24px;
+  max-width: 46ch;
+}
+.hero h1 { max-width: 16ch; margin-bottom: 20px; }
+.hero .lede { font-size: 1.1rem; max-width: 55ch; color: var(--ink-soft); }
+.btn {
+  display: inline-block;
+  background: var(--rust);
+  color: var(--white);
+  font-family: 'Zilla Slab', serif;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  margin-top: 20px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn:hover { background: var(--denim); color: var(--white); }
+
+/* Sections */
+section { padding: 56px 0; }
+section.alt { background: var(--canvas-alt); }
+.section-label { font-family: 'Zilla Slab', serif; font-weight: 600; font-size: 1.7rem; margin-bottom: 28px; }
+
+/* Services list */
+.service-row { display: grid; grid-template-columns: 1fr 2.2fr; gap: 24px; padding: 26px 0; border-top: 1px solid var(--line); }
+.service-row:last-child { border-bottom: 1px solid var(--line); }
+.service-row p { margin-bottom: 0; color: var(--ink-soft); }
+
+/* Service areas */
+.areas-list { display: flex; flex-wrap: wrap; gap: 10px 14px; padding: 0; margin: 0; list-style: none; }
+.areas-list li { font-family: 'Zilla Slab', serif; font-weight: 600; color: var(--denim); font-size: 1.1rem; }
+.areas-list li:not(:last-child)::after { content: '\00B7'; margin-left: 14px; color: var(--brass); }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+.about-grid img { width: 100%; border-radius: var(--radius); display: block; }
+
+/* Testimonials */
+.testimonial { border-top: 1px solid var(--line); padding: 22px 0; }
+.testimonial:last-child { border-bottom: 1px solid var(--line); }
+.testimonial p { font-size: 1.05rem; color: var(--ink); margin-bottom: 8px; }
+.testimonial cite { font-style: normal; font-family: 'Zilla Slab', serif; color: var(--denim); font-size: 0.92rem; }
+
+/* Contact */
+.contact-block { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.contact-item { margin-bottom: 20px; }
+.contact-item .label { display: block; font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 2px; }
+.contact-item a, .contact-item span { font-family: 'Zilla Slab', serif; font-weight: 600; font-size: 1.15rem; }
+
+/* Forms */
+.form-field { margin-bottom: 18px; }
+.form-field label { display: block; margin-bottom: 6px; font-size: 0.92rem; color: var(--ink-soft); }
+.form-field input, .form-field textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  background: var(--white);
+  color: var(--ink);
+}
+.form-field textarea { min-height: 130px; resize: vertical; }
+.form-field input:focus, .form-field textarea:focus { outline: 2px solid var(--denim); outline-offset: 1px; }
+
+/* Footer */
+.site-footer { background: var(--denim-dark); color: rgba(255,255,255,0.75); padding: 32px 0; font-size: 0.9rem; }
+.site-footer strong { color: var(--white); }
+.site-footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+/* Mobile */
+@media (max-width: 720px) {
+  .service-row, .about-grid, .contact-block { grid-template-columns: 1fr; }
+  nav.site-nav { width: 100%; order: 3; }
+  .site-header .container { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
