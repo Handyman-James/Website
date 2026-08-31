@@ -1,14 +1,21 @@
 # Handyman James — new site
 
-Plain HTML and CSS, no build tools, no frameworks. Every page is a real file you can open and read. This is step one of the migration: home page, contact page, and the deployment pipeline, all working end to end. The other eight pages (Services hub, four pillar pages, Locations, FAQ, About) come next — once this pipeline is live, adding them is just "drop in a file, push."
+Plain HTML and CSS, no build tools, no frameworks. Every page is a real file you can open and read. All ten pages are built now — this update replaces the first two-page version.
 
 ## What's in this folder
 
-- `index.html` — home page, with the LocalBusiness schema built directly into the page (no more pasting into a Custom Code panel — it's just part of the file now)
+- `index.html` — home page, with the LocalBusiness schema built directly into the page
+- `services.html` — services hub, linking to the four pages below
+- `handyman-work.html`, `renovations.html`, `property-management.html`, `snow-removal.html` — the four service pillar pages, each with its own Service schema
+- `locations.html` — service area page, with real per-town content
+- `about.html` — full About page
+- `faq.html` — FAQ page, with FAQPage schema matching the visible questions
 - `contact.html` — contact page with a working form
 - `style.css` — everything's styling, shared by every page
 - `render.yaml` — tells Render how to deploy this, automatically
 - `README.md` — this file
+
+If you already uploaded the first five files to GitHub, just upload these new ones into the same repo — GitHub will ask if you want to replace `index.html` and `contact.html` (say yes) and add the rest as new files.
 
 ## Before you go live: two things need your input
 
