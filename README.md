@@ -1,47 +1,63 @@
-# Handyman James — new site
+# Handyman James — website
 
-Plain HTML and CSS, no build tools, no frameworks. Every page is a real file you can open and read. All ten pages are built now — this update replaces the first two-page version.
+Plain HTML and CSS. No build tools, no frameworks, no external dependencies. Every page is a real file you can open and read.
 
 ## What's in this folder
 
-- `index.html` — home page, with the LocalBusiness schema built directly into the page
-- `services.html` — services hub, linking to the four pages below
-- `handyman-work.html`, `renovations.html`, `property-management.html`, `snow-removal.html` — the four service pillar pages, each with its own Service schema
-- `locations.html` — service area page, with real per-town content
-- `about.html` — full About page
-- `faq.html` — FAQ page, with FAQPage schema matching the visible questions
-- `contact.html` — contact page with a working form
-- `style.css` — everything's styling, shared by every page
-- `render.yaml` — tells Render how to deploy this, automatically
-- `README.md` — this file
+**Pages**
+- `index.html` — home page, with LocalBusiness schema
+- `services.html` — services hub
+- `property-management.html` — property management & 24/7 on-call ($50/month), with sign-up form
+- `snow-register.html` — 2026–2027 snow clearance register, with sign-up form
+- `handyman-work.html` — general handyman work
+- `snow-removal.html` — snow clearance & deicing
+- `locations.html` — service areas, with the area map
+- `about.html`, `faq.html`, `contact.html`
 
-If you already uploaded the first five files to GitHub, just upload these new ones into the same repo — GitHub will ask if you want to replace `index.html` and `contact.html` (say yes) and add the rest as new files.
+**Assets**
+- `style.css` — all styling, shared by every page
+- `images/logo.png`, `images/snow-clearing.jpg`, `images/cleared-driveway.jpg`, `images/icon-512.png`
+- `favicon.ico`, `apple-touch-icon.png`
 
-## Before you go live: two things need your input
+**Config**
+- `render.yaml` — Render deployment config
+- `sitemap.xml` — page index for search engines
+- `robots.txt` — crawler permissions, points to the sitemap
 
-**1. Images.** I couldn't pull your actual photo files from Wix, so the pages reference images that don't exist yet. Create an `images` folder next to these files and add:
-- `images/hero.jpg` — a good photo of your work (referenced by the schema too)
-- `images/james-portrait.jpg` — a photo of you, for the About section
+---
 
-Easiest path: open your current site, right-click the images you like, "Save image as," and drop them in with those exact filenames.
+## Forms
 
-**2. The contact form.** Sign up free at [formspree.io](https://formspree.io) (email only, no card needed), create a form, and they'll give you an endpoint that looks like `https://formspree.io/f/abc123xy`. Open `contact.html`, find the line that says `YOUR_FORM_ID`, and replace it with your real ID.
+Three pages have working forms, all pointing at the same Formspree endpoint (`meaqakbz`):
 
-## Getting this online (do this part first, before touching your domain)
+- `contact.html`
+- `property-management.html`
+- `snow-register.html`
 
-1. **Create a GitHub account** at github.com, if you don't have one.
-2. **Create a new repository** — call it something like `handyman-james-site`. Keep it public (Render's free tier needs that).
-3. **Upload the files** — on the new repo's page, click "Add file" → "Upload files," and drag in everything from this folder (including the `images` folder once you've added your photos).
-4. **Create a Render account** at render.com and connect your GitHub account.
-5. **New → Blueprint**, point it at your repo. Render reads `render.yaml` automatically and sets everything up — you shouldn't need to configure anything by hand.
-6. Render gives you a temporary address like `handyman-james-site.onrender.com`. **Open it and check everything** — click around, submit the contact form, check it on your phone.
+Each has a hidden `_subject` field, so messages arrive labelled by which page they came from — contact enquiry, property management sign-up, or snow register request.
 
-## Only after that works: moving your domain over
+**Test each one after deploying to Render.** Formspree sends a confirmation email the first time a form is used, and submissions only work from the live domain — not from a file opened locally.
 
-This is the one genuinely risky step, so it's worth doing carefully rather than fast. `www.handyman-james.com` currently points at Wix. Moving it to Render means changing DNS records — and if `info@handyman-james.com` runs through Wix's own email hosting, those same DNS records may be carrying your email too. Change the wrong thing and you can take your inbox down along with the site.
+Free tier is 50 submissions a month. Worth watching during the September snow register rush; if it fills, submissions stop rather than queue.
 
-When you're ready for this step, let's do it together rather than you doing it solo from a support article — I'll walk you through exactly which records to change and which to leave alone.
+---
 
-## What's next
+## Deploying to Render
 
-The remaining pages — Services hub, the four service pillar pages, Locations, FAQ, About — get built the same way: a new `.html` file, styled by the same `style.css`, pushed to the same repo. Once pushed, Render redeploys automatically. No new setup needed after today.
+1. Create a GitHub account and a public repository
+2. Upload everything in this folder, keeping the `images/` folder structure
+3. Create a Render account, connect GitHub
+4. **New → Blueprint**, point it at your repo — Render reads `render.yaml` automatically
+5. Render gives you a temporary address like `handyman-james-site.onrender.com`. Test everything there first — click every link, submit each form, check it on your phone.
+
+### Then, and only then: the domain
+
+`www.handyman-james.com` currently points at Wix. Moving it means changing DNS records — and if `info@handyman-james.com` runs through Wix's email, those records may carry your email too. Change the wrong one and the inbox goes down with the site. Worth doing carefully, together, rather than from a support article.
+
+---
+
+## Seasonal maintenance
+
+**After 30 September 2026:** remove the red snow register banner from every page. Search for `season-banner` — it's one `<div>` at the top of each HTML file, directly above `<header class="site-header">`.
+
+**Each new snow season:** update the dates in `snow-register.html` (title, banner, deadline text, and the `availabilityEnds` date in the schema block).
