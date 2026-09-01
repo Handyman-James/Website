@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Handyman James | Licensed Handyman, Newton & Boston Suburbs</title>
-<meta name="description" content="Licensed, insured handyman serving Newton, Lexington, Arlington, Waltham & nearby towns. Renovations, property management, snow removal, and general repairs.">
+<title>Handyman James | Licensed Handyman &amp; Property Management, Newton MA</title>
+<meta name="description" content="Licensed, insured handyman and property management serving Newton, Lexington, Arlington, Waltham & nearby towns. One accountable professional, not a rotating crew.">
 <link rel="canonical" href="https://www.handyman-james.com/">
-<meta property="og:title" content="Handyman James | Licensed Handyman, Newton & Boston Suburbs">
-<meta property="og:description" content="Licensed, insured handyman serving Newton, Lexington, Arlington, Waltham & nearby towns.">
+<meta property="og:title" content="Handyman James | Licensed Handyman & Property Management, Newton MA">
+<meta property="og:description" content="Licensed, insured handyman and property management serving Newton, Lexington, Arlington, Waltham & nearby towns.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.handyman-james.com/">
 <link rel="stylesheet" href="style.css">
@@ -19,8 +19,8 @@
   "url": "https://www.handyman-james.com",
   "telephone": "+1-508-306-1552",
   "email": "info@handyman-james.com",
-  "image": "https://www.handyman-james.com/images/hero.jpg",
-  "description": "Licensed and insured handyman serving Newton and the western Boston suburbs. Renovations, property management, snow removal, and general home repairs.",
+  "image": "https://www.handyman-james.com/images/logo.png",
+  "description": "Licensed and insured handyman and property management serving Newton and the western Boston suburbs. One accountable professional handling repairs and seasonal upkeep.",
   "areaServed": [
     { "@type": "City", "name": "Newton" },
     { "@type": "City", "name": "Lexington" },
@@ -28,14 +28,25 @@
     { "@type": "City", "name": "Waltham" },
     { "@type": "City", "name": "Lincoln" },
     { "@type": "City", "name": "Concord" },
-    { "@type": "City", "name": "Wellesley" }
+    { "@type": "City", "name": "Wellesley" },
+    { "@type": "City", "name": "Belmont" },
+    { "@type": "City", "name": "Cambridge" },
+    { "@type": "City", "name": "Boston" }
   ],
-  "hasCredential": {
-    "@type": "EducationalOccupationalCredential",
-    "credentialCategory": "license",
-    "name": "Massachusetts Construction Supervisor License (Unrestricted)",
-    "identifier": "120385"
-  },
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "license",
+      "name": "Massachusetts Construction Supervisor License (Unrestricted)",
+      "identifier": "120385"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "registration",
+      "name": "Massachusetts Home Improvement Contractor Registration",
+      "identifier": "197410"
+    }
+  ],
   "sameAs": [
     "https://www.yelp.com/biz/handyman-james-newton",
     "https://nextdoor.com/pages/handyman-james-arlington-ma/",
@@ -43,7 +54,6 @@
   ],
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Handyman work" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renovations" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Property management" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Snow clearance & deicing" } }
   ]
@@ -54,14 +64,19 @@
 
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="brand">Handyman James</a>
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Handyman James" class="brand-logo">
+      <span class="brand-text">Handyman James</span>
+    </a>
     <div class="header-right">
-      <span class="license-badge">Unrestricted MA Construction Supervisor <strong>License #120385</strong></span>
+      <span class="license-badge">Construction Supervisor License <strong>#120385</strong></span>
+      <span class="license-badge">Home Improvement Contractor <strong>#197410</strong></span>
       <a href="tel:+15083061552" class="header-phone">(508) 306-1552</a>
     </div>
   </div>
-  <div class="container">
-    <nav class="site-nav" style="margin-top:10px;">
+  <div class="header-nav-row">
+    <div class="container">
+    <nav class="site-nav">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="locations.html">Locations</a>
@@ -69,15 +84,40 @@
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
     </nav>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
     <blockquote>&ldquo;If a job is worth doing, it is worth doing well.&rdquo;<br>&mdash; what James's father told him at age four</blockquote>
-    <h1>Licensed handyman serving Newton and the western Boston suburbs</h1>
-    <p class="lede">Renovations, property management, seasonal upkeep, and the small jobs other contractors won't take &mdash; done personally, by someone who shows up.</p>
+    <h1>Licensed handyman &amp; property management for Newton and the western suburbs</h1>
+    <p class="lede">Licensed, insured, and personally accountable for every job &mdash; from a loose hinge to full property oversight, for homeowners across Newton, Lexington, Arlington, Waltham, Lincoln, Concord, and Wellesley.</p>
     <a href="contact.html" class="btn">Get a quote</a>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2 class="section-label">Why homeowners rely on James</h2>
+    <div class="value-grid">
+      <div>
+        <h3>Licensed and registered, not just handy</h3>
+        <p>An unrestricted Construction Supervisor License and a state HIC registration &mdash; not an informal side job.</p>
+      </div>
+      <div>
+        <h3>One person, start to finish</h3>
+        <p>The person who quotes the job is the person who does it &mdash; every time, no rotating crew.</p>
+      </div>
+      <div>
+        <h3>Told straight, not sold</h3>
+        <p>If something's outside his license or skill, he says so before starting, not after.</p>
+      </div>
+      <div>
+        <h3>Actually answers the phone</h3>
+        <p>24/7 for property management clients, and a same-day response for everyone else.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -88,10 +128,6 @@
     <div class="service-row">
       <h3><a href="handyman-work.html">Handyman work</a></h3>
       <p>From hanging blinds and TVs to drywall repairs, painting, and general fixes &mdash; no job too small.</p>
-    </div>
-    <div class="service-row">
-      <h3><a href="renovations.html">Renovations</a></h3>
-      <p>Full home renovation projects, managed personally and finished exactly the way you want them.</p>
     </div>
     <div class="service-row">
       <h3><a href="property-management.html">Property management</a></h3>
@@ -115,20 +151,20 @@
       <li>Lincoln</li>
       <li>Concord</li>
       <li>Wellesley</li>
+      <li>Belmont</li>
+      <li>Cambridge</li>
+      <li>Boston</li>
     </ul>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="about-grid">
-      <img src="images/james-portrait.jpg" alt="James, owner of Handyman James, on a job site">
-      <div>
+    <div>
         <h2 class="section-label"><a href="about.html">Who is Handyman James?</a></h2>
         <p>Born and raised in the United Kingdom, James's father sat him down on the workbench at four years old and told him: if a job is worth doing, it is worth doing well.</p>
         <p>Decades later, he's experienced in maintaining both houses and boats, and has hundreds of loyal clients across the Boston suburbs.</p>
       </div>
-    </div>
   </div>
 </section>
 
@@ -160,7 +196,8 @@
 
 <footer class="site-footer">
   <div class="container">
-    <div><strong>Handyman James</strong> &middot; License #120385 &middot; Newton, MA</div>
+    <div><strong>Handyman James</strong></div>
+    <div>CSL #120385 &amp; HIC #197410, Newton, MA</div>
     <div>&copy; 2026 Handyman James</div>
   </div>
 </footer>
