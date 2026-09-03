@@ -19,6 +19,18 @@ Plain HTML and CSS. No build tools, no frameworks, no external dependencies. Eve
 - `images/logo.png`, `images/snow-clearing.jpg`, `images/cleared-driveway.jpg`, `images/icon-512.png`
 - `images/favicon.ico`, `images/apple-touch-icon.png`
 
+**Analytics**
+- `analytics.js` — Google Analytics (GA4), loaded by every page
+
+The measurement ID is set in one place, at the top of `analytics.js`. The standard
+Google snippet repeats the ID twice per page; across 11 pages that's 22 copies to keep
+in step, and a page that gets missed is a hole in the data you only find by going
+looking for it. Each page loads the shared file instead.
+
+Until a real `G-` ID is filled in, the file deliberately does nothing — so the site can
+deploy before the Analytics account is ready. It also skips localhost, so testing
+doesn't show up as real traffic.
+
 **Config**
 - `render.yaml` — Render deployment config
 - `sitemap.xml` — page index for search engines
