@@ -17,7 +17,7 @@ Plain HTML and CSS. No build tools, no frameworks, no external dependencies. Eve
 **Assets**
 - `style.css` — all styling, shared by every page
 - `images/logo.png`, `images/snow-clearing.jpg`, `images/cleared-driveway.jpg`, `images/icon-512.png`
-- `favicon.ico`, `apple-touch-icon.png`
+- `images/favicon.ico`, `images/apple-touch-icon.png`
 
 **Config**
 - `render.yaml` — Render deployment config
@@ -28,17 +28,26 @@ Plain HTML and CSS. No build tools, no frameworks, no external dependencies. Eve
 
 ## Forms
 
-Three pages have working forms, all pointing at the same Formspree endpoint (`meaqakbz`):
+Three pages have working forms, all posting to the backend's public enquiry endpoint
+(`https://handyman-s4l1.onrender.com/api/public/enquiry`):
 
 - `contact.html`
 - `property-management.html`
 - `snow-register.html`
 
-Each has a hidden `_subject` field, so messages arrive labelled by which page they came from — contact enquiry, property management sign-up, or snow register request.
+Each carries three hidden fields:
 
-**Test each one after deploying to Render.** Formspree sends a confirmation email the first time a form is used, and submissions only work from the live domain — not from a file opened locally.
+- `_subject` — labels the message by which page it came from (contact enquiry,
+  property management sign-up, or snow register request)
+- `_redirect` — sends the visitor to `thank-you.html` after a successful submit
+- `_gotcha` — a hidden honeypot field; bots fill it in, real people don't
 
-Free tier is 50 submissions a month. Worth watching during the September snow register rush; if it fills, submissions stop rather than queue.
+These previously went to Formspree (form ID `meaqakbz`). That free tier capped at 50
+submissions a month, which was a real risk during the September snow register rush —
+once full, submissions stopped rather than queued. The backend has no such cap.
+
+**Test each one after deploying.** Submissions only work from the live domain, not from
+a file opened locally.
 
 ---
 

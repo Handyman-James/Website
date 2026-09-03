@@ -45,8 +45,8 @@
   "@id": "https://www.handyman-james.com/property-management.html#service"
 }
 </script>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="images/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <meta name="theme-color" content="#1B2921">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Handyman James">
@@ -167,8 +167,10 @@
 
     <div class="contact-block">
       <div>
-        <form action="https://formspree.io/f/meaqakbz" method="POST">
+        <form action="https://handyman-s4l1.onrender.com/api/public/enquiry" method="POST">
           <input type="hidden" name="_subject" value="Property Management / On-Call sign-up">
+          <input type="hidden" name="_redirect" value="https://www.handyman-james.com/thank-you.html">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-field">
             <label for="name">Your name</label>
             <input type="text" id="name" name="name" required>
