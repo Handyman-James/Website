@@ -11,7 +11,7 @@
  * Analytics, switched off in 2023, and its tags no longer collect anything).
  * ---------------------------------------------------------------------------
  */
-var GA_MEASUREMENT_ID = "";
+var GA_MEASUREMENT_ID = "G-RWV9HVGWHS";
 
 (function () {
   // Deliberately does nothing until a real ID is set, so the site can ship before
