@@ -172,6 +172,7 @@ section.alt { background: var(--parchment-alt); }
   .header-right { align-items: flex-start; text-align: left; }
   nav.site-nav { flex-wrap: wrap; gap: 16px 20px; }
   .brand-logo { height: 68px; }
+  .header-phone { font-size: 1.02rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 

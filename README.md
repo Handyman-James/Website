@@ -14,6 +14,26 @@ Plain HTML and CSS. No build tools, no frameworks, no external dependencies. Eve
 - `locations.html` — service areas, with the area map
 - `about.html`, `faq.html`, `contact.html`
 
+**Town pages (5 towns x 3 services = 15)**
+
+For Newton, Lexington, Arlington, Belmont and Waltham:
+
+- `handyman-work-<town>.html`
+- `property-management-<town>.html` — carries its own sign-up form
+- `snow-removal-<town>.html` — links to the shared `snow-register.html` form
+
+Each is a normal static file with its own copy, meta tags and `Service` schema.
+They are linked from the town names on `locations.html`, and cross-link to each
+other. They were generated from a script so the header, nav and footer stay
+identical across all of them — if you change the nav, change it everywhere or
+regenerate. The script is not needed to serve the site.
+
+The property-management town pages each post with a `town` field and a
+`_subject` naming the town, so enquiries tell you which page produced them.
+The snow town pages deliberately do *not* carry their own copy of the register
+form: that form changes every season, and five extra copies is five chances to
+miss one.
+
 **Assets**
 - `style.css` — all styling, shared by every page
 - `images/logo.png`, `images/snow-clearing.jpg`, `images/cleared-driveway.jpg`, `images/icon-512.png`
@@ -79,6 +99,6 @@ a file opened locally.
 
 ## Seasonal maintenance
 
-**After 30 September 2026:** remove the red snow register banner from every page. Search for `season-banner` — it's one `<div>` at the top of each HTML file, directly above `<header class="site-header">`.
+**After 30 September 2026:** remove the red snow register banner from every page. Search for `season-banner` — it's one `<div>` at the top of each HTML file, directly above `<header class="site-header">`. This now covers 26 files, not 11. The `deadline-flag` paragraph near the top of each `snow-removal-<town>.html` needs the same treatment.
 
 **Each new snow season:** update the dates in `snow-register.html` (title, banner, deadline text, and the `availabilityEnds` date in the schema block).
