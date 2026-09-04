@@ -27,6 +27,13 @@ var GA_MEASUREMENT_ID = "G-RWV9HVGWHS";
     return;
   }
 
+  // Nor the Render preview domain. The site gets tested there before every DNS
+  // change and before each season's register goes live; without this, that
+  // testing lands in the same property as real visitors.
+  if (host.indexOf(".onrender.com") > -1) {
+    return;
+  }
+
   var s = document.createElement("script");
   s.async = true;
   s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
