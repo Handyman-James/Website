@@ -164,6 +164,17 @@ section.alt { background: var(--parchment-alt); }
 .site-footer { background: var(--evergreen-dark); color: rgba(251, 248, 240, 0.75); padding: 30px 0; font-size: 0.9rem; }
 .site-footer strong { color: var(--white); font-family: 'Fraunces', serif; font-weight: 500; }
 .site-footer .container { display: flex; flex-direction: column; gap: 4px; }
+/* Footer links need their own colour: the default link green is almost exactly the
+   footer's own background, so without this they are invisible down here. */
+.site-footer a { color: rgba(251, 248, 240, 0.85); text-decoration: underline; text-underline-offset: 2px; }
+.site-footer a:hover { color: var(--white); }
+.footer-links { margin-top: 2px; }
+
+/* Consent note under a form's phone field */
+.form-consent { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; margin: -2px 0 16px; max-width: 60ch; }
+.form-consent p { margin: 6px 0 0; font-size: 0.82rem; max-width: none; }
+.consent-check { display: flex; gap: 8px; align-items: flex-start; cursor: pointer; }
+.consent-check input { margin-top: 3px; flex-shrink: 0; accent-color: var(--evergreen); }
 
 /* Mobile */
 @media (max-width: 720px) {
