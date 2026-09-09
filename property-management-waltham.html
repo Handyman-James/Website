@@ -198,6 +198,7 @@
           <input type="hidden" name="_redirect" value="https://www.handyman-james.com/thank-you.html">
           <input type="hidden" name="town" value="Waltham">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_elapsed" value="">
           <div class="form-field">
             <label for="name">Your name</label>
             <input type="text" id="name" name="name" required>
@@ -275,5 +276,27 @@
   </div>
 </footer>
 
+<script>
+// How long the form was on screen before it was submitted, in milliseconds.
+//
+// A person reads the page, thinks, and types: even a fast one takes several seconds.
+// A script that loads the page purely to post it is done in a fraction of that. The
+// backend treats anything under three seconds as one signal among several - never on
+// its own - so a genuinely quick submission cannot be rejected by this alone.
+//
+// It is filled in at submit time rather than on load, so the value is the real
+// elapsed time even if the page sat open in a background tab. If JavaScript is off
+// the field stays empty, and an absent value counts for nothing: it must never
+// penalise someone browsing without scripts.
+(function () {
+  var openedAt = Date.now();
+  document.addEventListener("submit", function (event) {
+    var form = event.target;
+    if (!form || !form.querySelector) return;
+    var field = form.querySelector('input[name="_elapsed"]');
+    if (field) field.value = String(Date.now() - openedAt);
+  }, true);
+})();
+</script>
 </body>
 </html>
