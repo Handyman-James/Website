@@ -8,3 +8,54 @@ services:
       - path: /*
         name: X-Content-Type-Options
         value: nosniff
+
+    # Redirects for the old Wix URLs.
+    #
+    # The site moved off Wix on 4 September 2026, but the Wix pages are still
+    # sitting in Google's and Bing's indexes under their old addresses - a search
+    # for the business still turns up "CONTACT - Handyman James Of Bo" at
+    # /contact-1 and "OUR SERVICES | Handyman James Of Bo" at /our-services.
+    # Those now return 404, so anyone arriving from a search result, an old
+    # bookmark or a link on a directory listing hits a dead page and leaves.
+    #
+    # A 301 sends them to the page that replaced it and tells the search engines
+    # to transfer the old page's standing to the new one, rather than dropping it.
+    #
+    # /contact-1 and /our-services are confirmed still indexed. The rest are Wix's
+    # stock slugs, included because they cost nothing if the page never existed.
+    # Once Search Console is set up, its Pages > "Not found (404)" report will list
+    # any others that are still being requested - add them here.
+    routes:
+      - type: redirect
+        source: /our-services
+        destination: /services.html
+      - type: redirect
+        source: /contact-1
+        destination: /contact.html
+      - type: redirect
+        source: /contact
+        destination: /contact.html
+      - type: redirect
+        source: /about-1
+        destination: /about.html
+      - type: redirect
+        source: /about
+        destination: /about.html
+      - type: redirect
+        source: /home
+        destination: /
+      - type: redirect
+        source: /snow-clearance
+        destination: /snow-removal.html
+      - type: redirect
+        source: /property-management
+        destination: /property-management.html
+      - type: redirect
+        source: /contact-us
+        destination: /contact.html
+      - type: redirect
+        source: /about-us
+        destination: /about.html
+      - type: redirect
+        source: /book-online
+        destination: /contact.html
