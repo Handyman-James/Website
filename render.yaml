@@ -26,6 +26,26 @@ services:
     # Once Search Console is set up, its Pages > "Not found (404)" report will list
     # any others that are still being requested - add them here.
     routes:
+      # Client links from the app. Contracts to sign, estimates and event replies are
+      # texted and emailed as www.handyman-james.com/contract/<code> (and /estimate/,
+      # /reply/), so a client sees the business's own address rather than the app's
+      # hosting address. Each is passed straight on to the app, which opens it as it
+      # always has. The code is the link's secret - it is what identifies the client
+      # and keeps everyone else out - so it is carried across unchanged.
+      #
+      # If the app moves to its own address (e.g. app.handyman-james.com), change the
+      # three destinations; links already sent keep working because they come here.
+      - type: redirect
+        source: /contract/:code
+        destination: https://frontend-bq90.onrender.com/?contract=:code
+      - type: redirect
+        source: /estimate/:code
+        destination: https://frontend-bq90.onrender.com/?estimate=:code
+      - type: redirect
+        source: /reply/:code
+        destination: https://frontend-bq90.onrender.com/?respond=:code
+
+      # Redirects for the old Wix URLs (see above).
       - type: redirect
         source: /our-services
         destination: /services.html

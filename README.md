@@ -52,7 +52,7 @@ deploy before the Analytics account is ready. It also skips localhost, so testin
 doesn't show up as real traffic.
 
 **Config**
-- `render.yaml` — Render deployment config, and 301 redirects from the old Wix URLs (`/contact-1`, `/our-services`) to the pages that replaced them
+- `render.yaml` — Render deployment config, and 301 redirects from the old Wix URLs (`/contact-1`, `/our-services`) to the pages that replaced them, and the client links from the app (`/contract/<code>`, `/estimate/<code>`, `/reply/<code>`), which are passed on to the app
 - `sitemap.xml` — page index for search engines
 - `robots.txt` — crawler permissions, points to the sitemap
 
