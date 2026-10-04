@@ -251,3 +251,9 @@ section.alt { background: var(--parchment-alt); }
 }
 .review-link:hover { border-color: var(--brass); color: var(--oxblood); }
 .review-link .stars { color: var(--brass); letter-spacing: 1px; }
+
+/* Buttons side by side, wrapping cleanly on a phone */
+.btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin-top: 18px; }
+.btn-row .btn { margin-top: 0; }
+.btn-ghost { background: transparent; color: var(--evergreen); border: 1.5px solid var(--evergreen); padding: 10.5px 24px; }
+.btn-ghost:hover { background: var(--evergreen); color: var(--white); }

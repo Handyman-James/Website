@@ -7,7 +7,7 @@ Plain HTML and CSS. No build tools, no frameworks, no external dependencies. Eve
 **Pages**
 - `index.html` — home page, with LocalBusiness schema
 - `services.html` — services hub
-- `property-management.html` — property management & 24/7 on-call ($50/month), with sign-up form
+- `property-management.html` — Property Care ($59/month per property) and Home Watch (add-on for owners who are away, quoted per home), with sign-up form
 - `snow-register.html` — 2026–2027 snow clearance register, with sign-up form
 - `handyman-work.html` — general handyman work
 - `snow-removal.html` — snow clearance & deicing
@@ -19,7 +19,7 @@ Plain HTML and CSS. No build tools, no frameworks, no external dependencies. Eve
 For Newton, Lexington, Arlington, Belmont and Waltham:
 
 - `handyman-work-<town>.html`
-- `property-management-<town>.html` — carries its own sign-up form
+- `property-management-<town>.html` — Property Care in that town; carries its own sign-up form, with the Home Watch tick-box
 - `snow-removal-<town>.html` — links to the shared `snow-register.html` form
 
 Each is a normal static file with its own copy, meta tags and `Service` schema.
