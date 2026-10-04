@@ -99,6 +99,6 @@ a file opened locally.
 
 ## Seasonal maintenance
 
-**After 30 September 2026:** remove the red snow register banner from every page. Search for `season-banner` — it's one `<div>` at the top of each HTML file, directly above `<header class="site-header">`. This now covers 26 files, not 11. The `deadline-flag` paragraph near the top of each `snow-removal-<town>.html` needs the same treatment.
+**After 15 November 2026:** remove the red snow register banner from every page. Search for `season-banner` — it's one `<div>` at the top of each HTML file, directly above `<header class="site-header">`. This now covers 26 files, not 11. The `deadline-flag` paragraph near the top of each `snow-removal-<town>.html` needs the same treatment.
 
 **Each new snow season:** update the dates in `snow-register.html` (title, banner, deadline text, and the `availabilityEnds` date in the schema block).
