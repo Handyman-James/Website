@@ -47,6 +47,15 @@ services:
       - type: redirect
         source: /reply/:code
         destination: https://frontend-bq90.onrender.com/?respond=:code
+      # Property Care: joining online, and each member's own page (their agreement,
+      # what they pay and when, and cancelling). The member's code is their link's
+      # secret, carried across unchanged like the others.
+      - type: redirect
+        source: /join
+        destination: https://frontend-bq90.onrender.com/?join=property-care
+      - type: redirect
+        source: /member/:code
+        destination: https://frontend-bq90.onrender.com/?member=:code
 
       # Redirects for the old Wix URLs (see above).
       - type: redirect
