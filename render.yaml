@@ -53,6 +53,10 @@ services:
       - type: redirect
         source: /join
         destination: https://frontend-bq90.onrender.com/?join=property-care
+      # A client's personal sign-up link, sent from their record: their details filled in.
+      - type: redirect
+        source: /join/:code
+        destination: https://frontend-bq90.onrender.com/?join=:code
       - type: redirect
         source: /member/:code
         destination: https://frontend-bq90.onrender.com/?member=:code
