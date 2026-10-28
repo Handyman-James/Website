@@ -38,15 +38,30 @@
     "url": "https://www.handyman-james.com",
     "telephone": "+1-508-306-1552"
   },
-  "areaServed": {
-    "@type": "City",
-    "name": "Newton, Massachusetts",
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 42.337,
-      "longitude": -71.2092
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Newton, Massachusetts",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.337,
+        "longitude": -71.2092
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Auburndale, Massachusetts",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Newton, Massachusetts"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.3459,
+        "longitude": -71.2482
+      }
     }
-  }
+  ]
 }
 </script>
 <script src="analytics.js" defer></script>
